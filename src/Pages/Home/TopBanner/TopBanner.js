@@ -11,7 +11,7 @@ const TopBanner = () => {
 				display: "flex",
 				justifyContent: "center",
 				alignItems: "center",
-				height: "100vh",
+				height: "104vh",
 				background: "#D4E6F1",
 				marginTop: -8,
 			}}

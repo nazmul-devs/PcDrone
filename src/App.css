@@ -3,6 +3,7 @@
 }
 * {
 	text-decoration: none;
+	object-fit: cover;
 }
 .App-logo {
 	height: 40vmin;

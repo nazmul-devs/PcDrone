@@ -6,9 +6,20 @@ import swal from "sweetalert";
 const AddService = () => {
 	const { register, handleSubmit, reset } = useForm();
 	const onSubmit = (data) => {
-		console.log(data);
-		swal("Good job!", "Service added successfully!", "success");
-		reset();
+		fetch("http://localhost:5000/services", {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(data),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.acknowledged) {
+					reset();
+					swal("Good job!", "Service added successfully!", "success");
+				}
+			});
 	};
 	return (
 		<div>
@@ -37,7 +48,7 @@ const AddService = () => {
 				<TextField
 					{...register("descripton")}
 					id="outlined-multiline-flexible"
-					label="Multiline"
+					label="Description"
 					multiline
 					rows={3}
 					sx={{ width: "50%", my: 2 }}
