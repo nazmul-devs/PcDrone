@@ -1,6 +1,7 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	return (
@@ -18,9 +19,11 @@ const Header = () => {
 						sx={{ mr: 2 }}
 					></IconButton>
 					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-						News
+						PCDrone
 					</Typography>
-					<Button color="inherit">Login</Button>
+					<Link to="dashBoard">
+						<Button color="inherit">Dash Board</Button>
+					</Link>
 				</Toolbar>
 			</AppBar>
 		</Box>
