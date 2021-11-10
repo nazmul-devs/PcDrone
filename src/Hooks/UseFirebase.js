@@ -15,10 +15,12 @@ InitialFirebase();
 const googleProvider = new GoogleAuthProvider();
 
 const UseFirebase = () => {
+	const [admin, setAdmin] = useState(null);
 	const [error, setError] = useState("");
 	const [user, setUser] = useState({});
 	const [loding, setLoading] = useState(true);
 	const [success, setSuccess] = useState(false);
+	const [services, setServices] = useState([]);
 
 	const auth = getAuth();
 	// google login
@@ -120,9 +122,19 @@ const UseFirebase = () => {
 				console.log(data);
 			});
 	};
+
+	// get services
+
+	useEffect(() => {
+		fetch("http://localhost:5000/services")
+			.then((res) => res.json())
+			.then((data) => setServices(data));
+	}, []);
 	return {
+		services,
 		error,
 		user,
+		admin,
 		loding,
 		success,
 		gooleLogin,

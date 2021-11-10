@@ -4,10 +4,11 @@
 * {
 	text-decoration: none;
 	object-fit: cover;
+	list-style-type: none;
 }
-.App-logo {
-	height: 40vmin;
-	pointer-events: none;
+ul > li {
+	margin: 20px 0;
+	text-align: left;
 }
 button {
 	border: none;

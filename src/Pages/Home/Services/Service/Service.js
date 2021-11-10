@@ -7,8 +7,9 @@ import {
 	Typography,
 } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Service = ({ service }) => {
+const Service = ({ service, index }) => {
 	const { name, img, descripton, price } = service;
 	return (
 		<Grid item xs={12} md={6}>
@@ -40,7 +41,9 @@ const Service = ({ service }) => {
 					>
 						$ {price}
 					</Typography>
-					<button>buy now</button>
+					<Link to={`purchase/${index}`}>
+						<button>buy now</button>
+					</Link>
 				</CardActions>
 			</Card>
 		</Grid>
