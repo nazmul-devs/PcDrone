@@ -2,9 +2,11 @@ import { AppBar, Button, IconButton, Toolbar } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { Link } from "react-router-dom";
+import UseFirebase from "../../../Hooks/UseFirebase";
 import logo from "../../../img/logo.jpg";
 
 const Header = () => {
+	const { user, logOut } = UseFirebase();
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar
@@ -39,11 +41,20 @@ const Header = () => {
 							Dash Board
 						</Button>
 					</Link>
-					<Link to="login">
-						<Button sx={{ color: "#283747", fontWeight: "bold" }}>
-							login
+					{user.email ? (
+						<Button
+							onClick={logOut}
+							sx={{ color: "#283747", fontWeight: "bold" }}
+						>
+							<i className="fas fa-sign-out-alt"></i> Logout
 						</Button>
-					</Link>
+					) : (
+						<Link to="login">
+							<Button sx={{ color: "#283747", fontWeight: "bold" }}>
+								login
+							</Button>
+						</Link>
+					)}
 				</Toolbar>
 			</AppBar>
 		</Box>

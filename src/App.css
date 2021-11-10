@@ -12,7 +12,7 @@
 button {
 	border: none;
 	background: #566573;
-
+	cursor: pointer;
 	padding: 15px 22px;
 	font-size: 20px;
 	color: #fff;
