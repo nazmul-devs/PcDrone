@@ -22,3 +22,35 @@ button {
 button:hover {
 	background: #171f26;
 }
+
+/* login btn */
+.login-btn,
+.fb-btn,
+.twitter-btn,
+.google-btn {
+	background: #007bff;
+	padding: 10px 20px;
+	margin: 0 10px;
+}
+.login-btn:hover {
+	background: #0068d6;
+}
+/* google btn */
+.google-btn {
+	background: #c32f10;
+}
+.google-btn:hover {
+	background: #a3240a;
+}
+.fb-btn {
+	background: #3b5998;
+}
+.fb-btn:hover {
+	background: #173168;
+}
+.twitter-btn {
+	background: #00aced;
+}
+.twitter-btn:hover {
+	background: #007eac;
+}

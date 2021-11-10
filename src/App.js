@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home/Home";
 import DashBoard from "./Pages/DashBoard/DashBoard/DashBoard";
 import NotFound from "./Pages/NotFound/NotFound";
+import Login from "./Pages/Login/Login/Login";
+import Register from "./Pages/Login/Register/Register";
 
 function App() {
 	return (
@@ -14,6 +16,12 @@ function App() {
 					</Route>
 					<Route path="/dashBoard">
 						<DashBoard />
+					</Route>
+					<Route path="/login">
+						<Login />
+					</Route>
+					<Route path="/register">
+						<Register />
 					</Route>
 					<Route path="*">
 						<NotFound />
