@@ -24,6 +24,7 @@ import Pay from "../User/Pay/Pay";
 import Review from "../User/Review/Review";
 import ManageAllOrders from "../Admin/Manage All Orders/ManageAllOrders";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import AdminRoute from "../Admin/AdminRoute/AdminRoute";
 
 const drawerWidth = 220;
 
@@ -212,9 +213,9 @@ function DashBoard(props) {
 					<Route path={`${path}/review`}>
 						<Review />
 					</Route>
-					<Route path={`${path}/makeAdmin`}>
+					<AdminRoute path={`${path}/makeAdmin`}>
 						<MakeAdmin />
-					</Route>
+					</AdminRoute>
 				</Switch>
 			</Box>
 		</Box>
