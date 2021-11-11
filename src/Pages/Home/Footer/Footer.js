@@ -15,7 +15,7 @@ const Footer = () => {
 		<Box sx={{ background: "#5D6D7E", p: 3 }}>
 			<Container sx={{ pb: 2 }}>
 				<Grid container spacing="4">
-					<Grid item xs={12} md={6} lg={4}>
+					<Grid item xs={12} md={6} lg={4} sx={{ pr: 2 }}>
 						<Link to="/">
 							<img
 								width="110"
@@ -25,7 +25,13 @@ const Footer = () => {
 							/>
 						</Link>
 
-						<Typography fontWeight="bold" color="#fff" variant="h6">
+						<Typography
+							fontWeight="bold"
+							color="#fff"
+							variant="h6"
+							marginRight="7px"
+							marginTop="10px"
+						>
 							114 rue Fontaine 15 road d-block Dhaka
 						</Typography>
 						<Typography color="text.secondary">
