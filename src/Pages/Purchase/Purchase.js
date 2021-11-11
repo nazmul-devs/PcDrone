@@ -9,12 +9,11 @@ import swal from "sweetalert";
 
 import { useForm } from "react-hook-form";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React from "react";
 import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
 import logo from "../../img/logo.jpg";
-import spinner from "../../img/spinner.gif";
 
 const Purchase = () => {
 	const history = useHistory();
@@ -26,6 +25,7 @@ const Purchase = () => {
 	const onSubmit = (data) => {
 		data.productName = service.name;
 		data.productPrice = service.price;
+		data.status = "Pending";
 		fetch("http://localhost:5000/orders", {
 			method: "POST",
 			headers: {
