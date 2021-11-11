@@ -1,7 +1,14 @@
-import React from "react";
+import { Paper, Rating, Typography, Box } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 const DisplayReview = () => {
+	const [reviews, setReviews] = useState([]);
+	useEffect(() => {
+		fetch("http://localhost:5000/reviews")
+			.then((res) => res.json())
+			.then((data) => setReviews(data));
+	}, []);
 	const settings = {
 		dots: true,
 		infinite: true,
@@ -9,33 +16,41 @@ const DisplayReview = () => {
 		slidesToShow: 3,
 		slidesToScroll: 3,
 	};
+	console.log(reviews);
 	return (
-		<div>
-			<h2> Multiple items </h2>
+		<Box sx={{ my: 4 }}>
+			<Typography
+				variant="h3"
+				sx={{ fontWeight: "bold", color: "#283747", py: 6 }}
+			>
+				What client says about us
+			</Typography>
 			<Slider {...settings}>
-				<div>
-					<h3>hello</h3>
-				</div>
-				<div>
-					<h3>2</h3>
-				</div>
-				<div>
-					<h3>3</h3>
-				</div>
-				<div>
-					<h3>4</h3>
-				</div>
-				<div>
-					<h3>5</h3>
-				</div>
-				<div>
-					<h3>6</h3>
-				</div>
-				<div>
-					<h3>7</h3>
-				</div>
+				{reviews?.map((review) => (
+					<Paper
+						key={review._id}
+						sx={{
+							minHeight: 300,
+							p: 3,
+							my: 2,
+							background: "#f2f2f2",
+							border: "2px solid lightgray",
+						}}
+					>
+						<Typography
+							variant="h5"
+							sx={{ color: "#283747", fontWeight: "bold" }}
+						>
+							{review.name}
+						</Typography>
+						<Typography sx={{ maxWidth: 380, mx: "auto", my: 4 }}>
+							{review.description}
+						</Typography>
+						<Rating name="read-only" value={review.rating} readOnly />
+					</Paper>
+				))}
 			</Slider>
-		</div>
+		</Box>
 	);
 };
 

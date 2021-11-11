@@ -22,11 +22,14 @@ import UseAuth from "../../../Hooks/UseAuth";
 import MyOrders from "../User/MyOrders/MyOrders";
 import Pay from "../User/Pay/Pay";
 import Review from "../User/Review/Review";
+import ManageAllOrders from "../Admin/Manage All Orders/ManageAllOrders";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
 
 const drawerWidth = 220;
 
 function DashBoard(props) {
-	const { logOut, user, admin } = UseAuth();
+	const { logOut, user } = UseAuth();
+	const admin = true;
 	const { path, url } = useRouteMatch();
 	const { window } = props;
 	const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -51,7 +54,7 @@ function DashBoard(props) {
 					{" "}
 					<li>
 						<Link
-							to={`${url}/rendering`}
+							to={url}
 							style={{ color: "#283747", fontWeight: "bold" }}
 						>
 							Manage all orders
@@ -67,7 +70,7 @@ function DashBoard(props) {
 					</li>
 					<li>
 						<Link
-							to={`${url}/rendering`}
+							to={`${url}/makeAdmin`}
 							style={{ color: "#283747", fontWeight: "bold" }}
 						>
 							Make admin
@@ -202,13 +205,16 @@ function DashBoard(props) {
 				<Toolbar />
 				<Switch>
 					<Route exact path={path}>
-						<MyOrders />
+						{admin ? <ManageAllOrders /> : <MyOrders />}
 					</Route>
 					<Route path={`${path}/pay`}>
 						<Pay />
 					</Route>
 					<Route path={`${path}/review`}>
 						<Review />
+					</Route>
+					<Route path={`${path}/makeAdmin`}>
+						<MakeAdmin />
 					</Route>
 				</Switch>
 			</Box>

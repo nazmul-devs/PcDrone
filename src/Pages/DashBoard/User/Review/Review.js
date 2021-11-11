@@ -84,7 +84,6 @@ const Review = () => {
 					<TextField
 						{...register("description")}
 						sx={{ width: 320, my: 2 }}
-						name="review"
 						label="Review"
 						placeholder="Describe your experience"
 						InputLabelProps={{
