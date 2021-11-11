@@ -130,6 +130,15 @@ const UseFirebase = () => {
 			.then((res) => res.json())
 			.then((data) => setServices(data));
 	}, []);
+
+	// verify admin
+	useEffect(() => {
+		fetch(`http://localhost:5000/users/${user.email}`)
+			.then((res) => res.json())
+			.then((data) => {
+				setAdmin(data.admin);
+			});
+	});
 	return {
 		services,
 		error,

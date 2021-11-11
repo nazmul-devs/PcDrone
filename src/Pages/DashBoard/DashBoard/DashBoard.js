@@ -28,8 +28,7 @@ import MakeAdmin from "../MakeAdmin/MakeAdmin";
 const drawerWidth = 220;
 
 function DashBoard(props) {
-	const { logOut, user } = UseAuth();
-	const admin = true;
+	const { logOut, admin } = UseAuth();
 	const { path, url } = useRouteMatch();
 	const { window } = props;
 	const [mobileOpen, setMobileOpen] = React.useState(false);
