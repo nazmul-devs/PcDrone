@@ -10,6 +10,7 @@ import {
 	updateProfile,
 } from "firebase/auth";
 import InitialFirebase from "../Firebase/InitialFirebase";
+import swal from "sweetalert";
 
 InitialFirebase();
 const googleProvider = new GoogleAuthProvider();
@@ -21,6 +22,7 @@ const UseFirebase = () => {
 	const [loding, setLoading] = useState(true);
 	const [success, setSuccess] = useState(false);
 	const [services, setServices] = useState([]);
+	const [reload, setReload] = useState(false);
 
 	const auth = getAuth();
 	// google login
@@ -73,7 +75,6 @@ const UseFirebase = () => {
 		setLoading(true);
 		signInWithEmailAndPassword(auth, data.email, data.password)
 			.then((userCredential) => {
-				const user = userCredential.user;
 				const path = location?.state?.from || "/";
 				history.replace(path);
 			})
@@ -129,7 +130,7 @@ const UseFirebase = () => {
 		fetch("http://localhost:5000/services")
 			.then((res) => res.json())
 			.then((data) => setServices(data));
-	}, []);
+	}, [reload]);
 
 	// verify admin
 	useEffect(() => {
@@ -139,6 +140,69 @@ const UseFirebase = () => {
 				setAdmin(data.admin);
 			});
 	});
+	// remove from services
+	const removeHandle = (id) => {
+		swal({
+			title: "Are you sure?",
+			text: "Do you want to delete this service from services?",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		}).then((willDelete) => {
+			if (willDelete) {
+				setReload(false);
+				const url = `http://localhost:5000/services`;
+				fetch(url, {
+					method: "DELETE",
+					headers: {
+						"content-type": "application/json",
+					},
+					body: JSON.stringify({ id }),
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						swal("This service has been deleted!", {
+							icon: "success",
+						});
+					})
+					.finally(() => setReload(true));
+			} else {
+				swal("Good decision!");
+			}
+		});
+	};
+
+	// remove from order
+	const cencelHandle = (id) => {
+		setReload(false);
+		swal({
+			title: "Are you sure?",
+			text: "Do you want to delete this order?",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		}).then((willDelete) => {
+			if (willDelete) {
+				const url = `http://localhost:5000/orders`;
+				fetch(url, {
+					method: "DELETE",
+					headers: {
+						"content-type": "application/json",
+					},
+					body: JSON.stringify({ id }),
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						swal("This order has been deleted!", {
+							icon: "success",
+						});
+					})
+					.finally(() => setReload(true));
+			} else {
+				swal("Good decision!");
+			}
+		});
+	};
 	return {
 		services,
 		error,
@@ -146,10 +210,14 @@ const UseFirebase = () => {
 		admin,
 		loding,
 		success,
+		reload,
+		setReload,
 		gooleLogin,
 		logOut,
 		newUserRegister,
 		loginUser,
+		removeHandle,
+		cencelHandle,
 	};
 };
 

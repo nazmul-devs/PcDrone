@@ -14,8 +14,8 @@ button {
 	border: none;
 	background: #566573;
 	cursor: pointer;
-	padding: 15px 22px;
-	font-size: 20px;
+	padding: 12px 20px;
+	font-size: 19px;
 	color: #fff;
 	text-transform: uppercase;
 	transition: 0.2s;
@@ -62,8 +62,23 @@ button:hover {
 	border-radius: 5px;
 	background: #c32f10;
 }
-
-.submit-btn {
+.cencel-btn:hover {
 	padding: 7px 18px;
-	border-radius: 7px;
+	border-radius: 5px;
+	background: #911c04;
+}
+
+.submit-btn,
+.remove-btn {
+	padding: 7px 18px;
+	border-radius: 6px;
+}
+
+/* shipped button */
+.shipped-btn {
+	background: #009e00;
+	border-radius: 5px;
+}
+.shipped-btn:hover {
+	background: #006a00;
 }

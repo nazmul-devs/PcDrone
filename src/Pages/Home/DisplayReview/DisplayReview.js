@@ -39,14 +39,14 @@ const DisplayReview = () => {
 					>
 						<Typography
 							variant="h5"
-							sx={{ color: "#283747", fontWeight: "bold" }}
+							sx={{ color: "#283747", fontWeight: "bold", mb: 4 }}
 						>
 							{review.name}
 						</Typography>
-						<Typography sx={{ maxWidth: 380, mx: "auto", my: 4 }}>
+						<Rating name="read-only" value={review.rating} readOnly />
+						<Typography sx={{ maxWidth: 380, mx: "auto", mt: 4 }}>
 							{review.description}
 						</Typography>
-						<Rating name="read-only" value={review.rating} readOnly />
 					</Paper>
 				))}
 			</Slider>

@@ -25,6 +25,7 @@ const Purchase = () => {
 	const onSubmit = (data) => {
 		data.productName = service.name;
 		data.productPrice = service.price;
+		data.img = service?.img;
 		data.status = "Pending";
 		fetch("http://localhost:5000/orders", {
 			method: "POST",

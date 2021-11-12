@@ -19,6 +19,7 @@ const Service = ({ service, index }) => {
 					height="300"
 					image={img}
 					alt="green iguana"
+					sx={{ objectFit: "cover" }}
 				/>
 				<CardContent>
 					<Typography

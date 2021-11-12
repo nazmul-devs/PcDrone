@@ -25,11 +25,13 @@ import Review from "../User/Review/Review";
 import ManageAllOrders from "../Admin/Manage All Orders/ManageAllOrders";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import AdminRoute from "../Admin/AdminRoute/AdminRoute";
+import ManageProducts from "../Admin/ManageProducts/ManageProducts";
+import AddService from "../Admin/AddService/AddService";
 
 const drawerWidth = 220;
 
 function DashBoard(props) {
-	const { logOut, admin } = UseAuth();
+	const { logOut, admin, user } = UseAuth();
 	const { path, url } = useRouteMatch();
 	const { window } = props;
 	const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -62,7 +64,7 @@ function DashBoard(props) {
 					</li>
 					<li>
 						<Link
-							to={`${url}/rendering`}
+							to={`${url}/addproduct`}
 							style={{ color: "#283747", fontWeight: "bold" }}
 						>
 							Add new product
@@ -78,7 +80,7 @@ function DashBoard(props) {
 					</li>
 					<li>
 						<Link
-							to={`${url}/rendering`}
+							to={`${url}/manageProducts`}
 							style={{ color: "#283747", fontWeight: "bold" }}
 						>
 							Manage product
@@ -152,7 +154,7 @@ function DashBoard(props) {
 						<MenuIcon />
 					</IconButton>
 					<Typography variant="h6" noWrap component="div">
-						Responsive drawer
+						{user.displayName}
 					</Typography>
 				</Toolbar>
 			</AppBar>
@@ -215,6 +217,12 @@ function DashBoard(props) {
 					</Route>
 					<AdminRoute path={`${path}/makeAdmin`}>
 						<MakeAdmin />
+					</AdminRoute>
+					<AdminRoute path={`${path}/manageProducts`}>
+						<ManageProducts />
+					</AdminRoute>
+					<AdminRoute path={`${path}/addproduct`}>
+						<AddService />
 					</AdminRoute>
 				</Switch>
 			</Box>
