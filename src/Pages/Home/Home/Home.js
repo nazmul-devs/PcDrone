@@ -1,4 +1,5 @@
 import React from "react";
+import BestDeal from "../BestDeal/BestDeal";
 import DisplayReview from "../DisplayReview/DisplayReview";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -12,6 +13,7 @@ const Home = () => {
 			<TopBanner />
 
 			<Services />
+			<BestDeal />
 			<DisplayReview />
 			<Footer />
 		</>

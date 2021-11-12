@@ -18,19 +18,26 @@ const Service = ({ service, index }) => {
 					component="img"
 					height="300"
 					image={img}
-					alt="green iguana"
+					alt="Drone camera"
 					sx={{ objectFit: "cover" }}
 				/>
-				<CardContent>
+				<CardContent sx={{ textAlign: "justify" }}>
 					<Typography
 						gutterBottom
-						variant="h4"
-						sx={{ fontWeight: "bold", color: "#283747" }}
+						variant="h5"
+						sx={{
+							fontWeight: "bold",
+							color: "#283747",
+						}}
 					>
 						{name}
 					</Typography>
-					<Typography variant="body1" color="text.secondary">
-						{descripton?.slice(0, 180)}...
+					<Typography
+						variant="body1"
+						color="text.secondary "
+						sx={{ my: 2 }}
+					>
+						{descripton?.slice(0, 150)}...
 					</Typography>
 				</CardContent>
 				<CardActions

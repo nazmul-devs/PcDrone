@@ -11,13 +11,13 @@ const Services = () => {
 		<Box sx={{ background: "#f2f2f2" }}>
 			<Container>
 				<Typography
-					variant="h3"
-					sx={{ fontWeight: "bold", color: "#283747", py: 6 }}
+					variant="h4"
+					sx={{ fontWeight: "bold", color: "#283747", py: 5 }}
 				>
 					Services We Provide
 				</Typography>
 				<Grid container spacing={4} sx={{ mx: "auto", py: 6 }}>
-					{services?.map((service, index) => (
+					{services?.slice(0, 6).map((service, index) => (
 						<Service key={service._id} service={service} index={index} />
 					))}
 				</Grid>

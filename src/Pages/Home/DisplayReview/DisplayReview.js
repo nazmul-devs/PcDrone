@@ -18,10 +18,10 @@ const DisplayReview = () => {
 	};
 	console.log(reviews);
 	return (
-		<Box sx={{ my: 4 }}>
+		<Box sx={{ mt: 4, background: "#f2f2f2", pb: 4 }}>
 			<Typography
-				variant="h3"
-				sx={{ fontWeight: "bold", color: "#283747", py: 6 }}
+				variant="h4"
+				sx={{ fontWeight: "bold", color: "#283747", py: 3 }}
 			>
 				What client says about us
 			</Typography>
@@ -33,8 +33,6 @@ const DisplayReview = () => {
 							minHeight: 300,
 							p: 3,
 							my: 2,
-							background: "#f2f2f2",
-							border: "2px solid lightgray",
 						}}
 					>
 						<Typography

@@ -2,14 +2,14 @@ import { TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { useForm } from "react-hook-form";
-import UseFirebase from "../../../Hooks/UseFirebase";
 import img from "../../../img/login-bg.jpg";
 import logo from "../../../img/logo.jpg";
 import spinner from "../../../img/spinner.gif";
 import { Link, useHistory, useLocation } from "react-router-dom";
+import UseAuth from "../../../Hooks/UseAuth";
 
 const Register = () => {
-	const { newUserRegister, loding } = UseFirebase();
+	const { newUserRegister, loding, error } = UseAuth();
 	const { register, handleSubmit, reset } = useForm();
 
 	const location = useLocation();
@@ -63,6 +63,9 @@ const Register = () => {
 						sx={{ fontWeight: "bold", color: "#525E6B", my: 2 }}
 					>
 						Create your account
+					</Typography>
+					<Typography variant="body1" sx={{ color: "#E74C3C", mt: 2 }}>
+						{error}
 					</Typography>
 					<TextField
 						{...register("name")}

@@ -34,7 +34,7 @@ const AddService = () => {
 				<TextField
 					{...register("name")}
 					id="outlined-basic"
-					label="Service"
+					label="Product name"
 					variant="outlined"
 					sx={{ width: "50%", my: 2 }}
 				/>

@@ -1,5 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import banner from "../../../img/banner-img.png";
 
 const TopBanner = () => {
@@ -19,7 +20,11 @@ const TopBanner = () => {
 			<Grid item xs={12} md={6} sx={{ textAlign: "center" }}>
 				<Typography
 					variant="h3"
-					sx={{ fontWeight: "bold", color: "#34495E" }}
+					sx={{
+						fontWeight: "bold",
+						color: "#34495E",
+						textAlign: "justify",
+					}}
 				>
 					DJI Phantom 3 Standard Quadcopter Drone
 				</Typography>
@@ -31,7 +36,9 @@ const TopBanner = () => {
 					half mile away on the DJI Go app using your mobile phone or
 					tablet
 				</Typography>
-				<button className="explore-btn">Explore more</button>
+				<Link to="explore">
+					<button className="explore-btn">Explore more</button>
+				</Link>
 			</Grid>
 			<Grid item xs={12} md={6}>
 				<img width="100%" src={banner} alt="" />

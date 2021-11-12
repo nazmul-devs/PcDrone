@@ -93,6 +93,7 @@ const UseFirebase = () => {
 				setUser({});
 			}
 			setLoading(false);
+			setError("");
 		});
 		return unsubscribe;
 	}, []);

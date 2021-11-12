@@ -27,13 +27,18 @@ const MakeAdmin = () => {
 		e.preventDefault();
 	};
 	return (
-		<Box sx={{ my: 4 }}>
+		<Box
+			sx={{
+				display: "flex",
+				justifyContent: "center",
+			}}
+		>
 			<form
 				onSubmit={makeAdminHandle}
 				style={{
 					display: "flex",
 					flexDirection: "column",
-					maxWidth: "500px",
+					width: 500,
 				}}
 			>
 				<TextField

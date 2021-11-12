@@ -3,14 +3,13 @@ import { Box } from "@mui/system";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useHistory } from "react-router-dom";
-import UseFirebase from "../../../Hooks/UseFirebase";
-// background: "#f2f2f2",
+import UseAuth from "../../../Hooks/UseAuth";
 import img from "../../../img/login-bg.jpg";
 import logo from "../../../img/logo.jpg";
 import spinner from "../../../img/spinner.gif";
 
 const Login = () => {
-	const { gooleLogin, loginUser, loding } = UseFirebase();
+	const { gooleLogin, loginUser, loding, error } = UseAuth();
 	const { register, handleSubmit, reset } = useForm();
 	const location = useLocation();
 	const history = useHistory();
@@ -63,6 +62,9 @@ const Login = () => {
 						sx={{ fontWeight: "bold", color: "#525E6B", my: 2 }}
 					>
 						Login to your account
+					</Typography>
+					<Typography variant="body1" sx={{ color: "#E74C3C", mt: 2 }}>
+						{error}
 					</Typography>
 					<TextField
 						{...register("email")}
