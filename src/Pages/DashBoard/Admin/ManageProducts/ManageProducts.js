@@ -9,7 +9,7 @@ const ManageProducts = () => {
 		<Box>
 			<Grid container spacing={4}>
 				{services?.map((service) => (
-					<Grid item xs={12} md={6}>
+					<Grid key={service._id} item xs={12} md={6}>
 						<Paper
 							sx={{
 								border: "1px solid lightgray",

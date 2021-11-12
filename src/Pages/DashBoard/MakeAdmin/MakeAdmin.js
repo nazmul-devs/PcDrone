@@ -38,7 +38,8 @@ const MakeAdmin = () => {
 				style={{
 					display: "flex",
 					flexDirection: "column",
-					width: 500,
+					width: "100%",
+					maxWidth: 500,
 				}}
 			>
 				<TextField

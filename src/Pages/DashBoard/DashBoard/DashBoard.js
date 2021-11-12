@@ -8,14 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link,
-	useParams,
-	useRouteMatch,
-} from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import logo from "../../../img/logo.jpg";
 import { Button } from "@mui/material";
 import UseAuth from "../../../Hooks/UseAuth";
@@ -140,7 +133,11 @@ function DashBoard(props) {
 				position="fixed"
 				sx={{
 					width: { sm: `calc(100% - ${drawerWidth}px)` },
-					ml: { sm: `${drawerWidth}px` },
+					ml: {
+						sm: `${drawerWidth}px`,
+						background: "#5D6D7E",
+						boxShadow: "none",
+					},
 				}}
 			>
 				<Toolbar>

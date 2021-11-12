@@ -96,7 +96,7 @@ const UseFirebase = () => {
 			setError("");
 		});
 		return unsubscribe;
-	}, []);
+	}, [auth]);
 	// logout
 	const logOut = () => {
 		signOut(auth)

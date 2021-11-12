@@ -2,11 +2,11 @@ import { AppBar, Button, IconButton, Toolbar } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { Link } from "react-router-dom";
-import UseFirebase from "../../../Hooks/UseFirebase";
+import UseAuth from "../../../Hooks/UseAuth";
 import logo from "../../../img/logo.jpg";
 
 const Header = () => {
-	const { user, logOut } = UseFirebase();
+	const { user, logOut } = UseAuth();
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar

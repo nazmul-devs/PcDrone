@@ -40,7 +40,6 @@ const ManageAllOrders = () => {
 	};
 	return (
 		<Box>
-			<h2>manage all orders {orders.length}</h2>
 			<Grid container spacing={3}>
 				{orders?.map((order) => (
 					<Grid item xs={12} md={6} key={order._id}>
