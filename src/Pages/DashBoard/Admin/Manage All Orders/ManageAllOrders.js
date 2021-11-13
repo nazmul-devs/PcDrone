@@ -82,7 +82,7 @@ const ManageAllOrders = () => {
 										variant="body1"
 										sx={{ fontWeight: "bold", color: "#34495E" }}
 									>
-										Status : {order.status}
+										Order : {order.status}
 									</Typography>
 									<Box
 										sx={{

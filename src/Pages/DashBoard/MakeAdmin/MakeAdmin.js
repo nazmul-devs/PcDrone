@@ -2,8 +2,10 @@ import { TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import swal from "sweetalert";
+import UseAuth from "../../../Hooks/UseAuth";
 
 const MakeAdmin = () => {
+	const { token } = UseAuth();
 	const [email, setEmail] = useState("");
 	const emailHandle = (e) => {
 		const value = e.target.value;
@@ -14,6 +16,7 @@ const MakeAdmin = () => {
 		fetch("http://localhost:5000/users/admin", {
 			method: "PUT",
 			headers: {
+				authorization: `Bearer ${token}`,
 				"content-type": "application/json",
 			},
 			body: JSON.stringify(makeAdminEmail),

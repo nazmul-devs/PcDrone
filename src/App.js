@@ -9,6 +9,7 @@ import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Purchase from "./Pages/Purchase/Purchase";
 import Explore from "./Pages/Home/Explore/Explore";
+import "animate.css";
 
 function App() {
 	return (

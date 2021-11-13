@@ -14,7 +14,6 @@ const Header = () => {
 				sx={{
 					background: "none",
 					color: "#000",
-					boxShadow: "0",
 					textAlign: "left",
 				}}
 			>
@@ -37,20 +36,37 @@ const Header = () => {
 						</Link>
 					</Box>
 					<Link to="dashBoard">
-						<Button sx={{ color: "#283747", fontWeight: "bold" }}>
+						<Button
+							sx={{
+								color: "#283747",
+								fontWeight: "bold",
+								mr: 4,
+							}}
+						>
 							Dash Board
 						</Button>
 					</Link>
 					{user.email ? (
 						<Button
 							onClick={logOut}
-							sx={{ color: "#283747", fontWeight: "bold" }}
+							sx={{
+								color: "#fff",
+								fontWeight: "bold",
+								background: "#F80051",
+							}}
 						>
 							<i className="fas fa-sign-out-alt"></i> Logout
 						</Button>
 					) : (
 						<Link to="login">
-							<Button sx={{ color: "#283747", fontWeight: "bold" }}>
+							<Button
+								sx={{
+									color: "#fff",
+									fontWeight: "bold",
+									background: "#F80051",
+									px: 3,
+								}}
+							>
 								login
 							</Button>
 						</Link>

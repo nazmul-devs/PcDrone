@@ -2,6 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import banner from "../../../img/banner-img.png";
+import "animate.css";
 
 const TopBanner = () => {
 	return (
@@ -15,9 +16,16 @@ const TopBanner = () => {
 				minHeight: "104vh",
 				background: "#D4E6F1",
 				marginTop: -8,
+				pt: 6,
 			}}
 		>
-			<Grid item xs={12} md={6} sx={{ textAlign: "center" }}>
+			<Grid
+				item
+				xs={12}
+				md={6}
+				sx={{ textAlign: "center" }}
+				className="animate__animated animate__slideInLeft"
+			>
 				<Typography
 					variant="h3"
 					sx={{
@@ -37,10 +45,15 @@ const TopBanner = () => {
 					tablet
 				</Typography>
 				<Link to="explore">
-					<button className="explore-btn">Explore more</button>
+					<button>Explore more</button>
 				</Link>
 			</Grid>
-			<Grid item xs={12} md={6}>
+			<Grid
+				item
+				xs={12}
+				md={6}
+				className="animate__animated animate__bounceInUp"
+			>
 				<img width="100%" src={banner} alt="" />
 			</Grid>
 		</Grid>

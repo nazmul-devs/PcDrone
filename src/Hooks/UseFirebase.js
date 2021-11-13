@@ -8,6 +8,7 @@ import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
 	updateProfile,
+	getIdToken,
 } from "firebase/auth";
 import InitialFirebase from "../Firebase/InitialFirebase";
 import swal from "sweetalert";
@@ -23,6 +24,7 @@ const UseFirebase = () => {
 	const [success, setSuccess] = useState(false);
 	const [services, setServices] = useState([]);
 	const [reload, setReload] = useState(false);
+	const [token, setToken] = useState("");
 
 	const auth = getAuth();
 	// google login
@@ -89,6 +91,9 @@ const UseFirebase = () => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			if (user) {
 				setUser(user);
+				getIdToken(user).then((idToken) => {
+					setToken(idToken);
+				});
 			} else {
 				setUser({});
 			}
@@ -212,6 +217,7 @@ const UseFirebase = () => {
 		loding,
 		success,
 		reload,
+		token,
 		setReload,
 		gooleLogin,
 		logOut,

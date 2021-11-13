@@ -13,51 +13,61 @@ const MyOrders = () => {
 			.then((res) => res.json())
 			.then((data) => setMyOrders(data));
 	}, [user.email, reload]);
+	console.log(myOrders);
 
 	return (
 		<Box>
-			<Grid
-				container
-				spacing={2}
-				sx={{
-					background: "#283747",
-					pb: 1,
-				}}
-			>
-				<Grid item xs={12} md={5}>
-					<Typography
-						variant="body1"
-						sx={{ color: "#fff", fontWeight: "bold" }}
-					>
-						Product Name
-					</Typography>
-				</Grid>
-				<Grid item xs={12} md={2}>
-					<Typography
-						variant="body1"
-						sx={{ color: "#fff", fontWeight: "bold" }}
-					>
-						Price
-					</Typography>
-				</Grid>
-				<Grid item xs={12} md={3}>
-					<Typography
-						variant="body1"
-						sx={{ color: "#fff", fontWeight: "bold" }}
-					>
-						Status
-					</Typography>
-				</Grid>
+			{myOrders.length ? (
+				<Grid
+					container
+					spacing={2}
+					sx={{
+						background: "#283747",
+						pb: 1,
+					}}
+				>
+					<Grid item xs={12} md={5}>
+						<Typography
+							variant="body1"
+							sx={{ color: "#fff", fontWeight: "bold" }}
+						>
+							Product Name
+						</Typography>
+					</Grid>
+					<Grid item xs={12} md={2}>
+						<Typography
+							variant="body1"
+							sx={{ color: "#fff", fontWeight: "bold" }}
+						>
+							Price
+						</Typography>
+					</Grid>
+					<Grid item xs={12} md={3}>
+						<Typography
+							variant="body1"
+							sx={{ color: "#fff", fontWeight: "bold" }}
+						>
+							Order
+						</Typography>
+					</Grid>
 
-				<Grid item xs={12} md={2}>
-					<Typography
-						variant="body1"
-						sx={{ color: "#fff", fontWeight: "bold" }}
-					>
-						Cancellation
-					</Typography>
+					<Grid item xs={12} md={2}>
+						<Typography
+							variant="body1"
+							sx={{ color: "#fff", fontWeight: "bold" }}
+						>
+							Cancellation
+						</Typography>
+					</Grid>
 				</Grid>
-			</Grid>
+			) : (
+				<Typography
+					variant="h4"
+					sx={{ fontWeight: "bold", color: "#283747", py: 5 }}
+				>
+					You have no orders
+				</Typography>
+			)}
 			{myOrders?.map((order) => (
 				<Grid
 					container

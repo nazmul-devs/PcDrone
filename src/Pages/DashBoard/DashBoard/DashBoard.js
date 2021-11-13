@@ -114,7 +114,11 @@ function DashBoard(props) {
 				<li>
 					<Button
 						onClick={logOut}
-						sx={{ color: "#283747", fontWeight: "bold" }}
+						sx={{
+							color: "#fff",
+							fontWeight: "bold",
+							background: "#F80051",
+						}}
 					>
 						<i className="fas fa-sign-out-alt"></i> Logout
 					</Button>
