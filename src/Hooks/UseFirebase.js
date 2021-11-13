@@ -116,7 +116,7 @@ const UseFirebase = () => {
 	// save user to database
 	const saveUser = (email, displayName, method) => {
 		const user = { email, displayName };
-		const url = "http://localhost:5000/users";
+		const url = "https://salty-bastion-94124.herokuapp.com/users";
 		fetch(url, {
 			method: method,
 			headers: {
@@ -133,14 +133,14 @@ const UseFirebase = () => {
 	// get services
 
 	useEffect(() => {
-		fetch("http://localhost:5000/services")
+		fetch("https://salty-bastion-94124.herokuapp.com/services")
 			.then((res) => res.json())
 			.then((data) => setServices(data));
 	}, [reload]);
 
 	// verify admin
 	useEffect(() => {
-		fetch(`http://localhost:5000/users/${user.email}`)
+		fetch(`https://salty-bastion-94124.herokuapp.com/users/${user.email}`)
 			.then((res) => res.json())
 			.then((data) => {
 				setAdmin(data.admin);
@@ -157,7 +157,7 @@ const UseFirebase = () => {
 		}).then((willDelete) => {
 			if (willDelete) {
 				setReload(false);
-				const url = `http://localhost:5000/services`;
+				const url = `https://salty-bastion-94124.herokuapp.com/services`;
 				fetch(url, {
 					method: "DELETE",
 					headers: {
@@ -189,7 +189,7 @@ const UseFirebase = () => {
 			dangerMode: true,
 		}).then((willDelete) => {
 			if (willDelete) {
-				const url = `http://localhost:5000/orders`;
+				const url = `https://salty-bastion-94124.herokuapp.com/orders`;
 				fetch(url, {
 					method: "DELETE",
 					headers: {
