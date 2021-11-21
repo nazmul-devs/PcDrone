@@ -210,7 +210,7 @@ function DashBoard(props) {
 					<Route exact path={path}>
 						{admin ? <ManageAllOrders /> : <MyOrders />}
 					</Route>
-					<Route path={`${path}/pay`}>
+					<Route path={`${path}/pay/:id`}>
 						<Pay />
 					</Route>
 					<Route path={`${path}/review`}>

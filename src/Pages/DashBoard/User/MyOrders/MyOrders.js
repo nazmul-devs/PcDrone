@@ -2,6 +2,7 @@ import { Typography, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState, useEffect } from "react";
 import UseAuth from "../../../../Hooks/UseAuth";
+import { Link } from "react-router-dom";
 
 const MyOrders = () => {
 	const [myOrders, setMyOrders] = useState([]);
@@ -13,7 +14,6 @@ const MyOrders = () => {
 			.then((res) => res.json())
 			.then((data) => setMyOrders(data));
 	}, [user.email, reload]);
-	console.log(myOrders);
 
 	return (
 		<Box>
@@ -26,7 +26,7 @@ const MyOrders = () => {
 						pb: 1,
 					}}
 				>
-					<Grid item xs={12} md={5}>
+					<Grid item xs={12} md={4}>
 						<Typography
 							variant="body1"
 							sx={{ color: "#fff", fontWeight: "bold" }}
@@ -42,7 +42,7 @@ const MyOrders = () => {
 							Price
 						</Typography>
 					</Grid>
-					<Grid item xs={12} md={3}>
+					<Grid item xs={12} md={2}>
 						<Typography
 							variant="body1"
 							sx={{ color: "#fff", fontWeight: "bold" }}
@@ -57,6 +57,14 @@ const MyOrders = () => {
 							sx={{ color: "#fff", fontWeight: "bold" }}
 						>
 							Cancellation
+						</Typography>
+					</Grid>
+					<Grid item xs={12} md={2}>
+						<Typography
+							variant="body1"
+							sx={{ color: "#fff", fontWeight: "bold" }}
+						>
+							Payment
 						</Typography>
 					</Grid>
 				</Grid>
@@ -77,25 +85,25 @@ const MyOrders = () => {
 						color: "#283747",
 						p: 3,
 						borderBottom: "1px solid lightgray",
+						alignItems: "center",
 					}}
 				>
-					<Grid item xs={12} md={5}>
-						<Typography
-							variant="body1"
-							sx={{
-								fontWeight: "bold",
-								textAlign: "justify",
-							}}
-						>
+					<Grid item xs={12} md={4}>
+						<Typography variant="body1" sx={{ textAlign: "justify" }}>
 							{order?.productName.slice(0, 50)}...
 						</Typography>
 					</Grid>
 					<Grid item xs={12} md={2}>
-						<Typography variant="body1" sx={{ fontWeight: "bold" }}>
+						<Typography
+							variant="body1"
+							sx={{
+								fontWeight: "bold",
+							}}
+						>
 							$ {order?.productPrice}
 						</Typography>
 					</Grid>
-					<Grid item xs={12} md={3}>
+					<Grid item xs={12} md={2}>
 						<Typography
 							variant="body1"
 							sx={{
@@ -117,6 +125,21 @@ const MyOrders = () => {
 						>
 							Cencel
 						</button>
+					</Grid>
+					<Grid item xs={12} md={2}>
+						<Typography
+							variant="body1"
+							sx={{
+								color: "#000",
+								fontWeight: "bold",
+							}}
+						>
+							{order.pay ? (
+								"Paid"
+							) : (
+								<Link to={`/dashBoard/pay/${order._id}`}>Pay</Link>
+							)}
+						</Typography>
 					</Grid>
 				</Grid>
 			))}
