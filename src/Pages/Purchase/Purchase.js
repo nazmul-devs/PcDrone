@@ -27,7 +27,7 @@ const Purchase = () => {
 		data.productPrice = service.price;
 		data.img = service?.img;
 		data.status = "Pending";
-		fetch("https://salty-bastion-94124.herokuapp.com/orders", {
+		fetch("https://shielded-retreat-91589.herokuapp.com/orders", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

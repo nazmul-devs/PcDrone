@@ -6,7 +6,7 @@ import swal from "sweetalert";
 const AddService = () => {
 	const { register, handleSubmit, reset } = useForm();
 	const onSubmit = (data) => {
-		fetch("https://salty-bastion-94124.herokuapp.com/services", {
+		fetch("https://shielded-retreat-91589.herokuapp.com/services", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

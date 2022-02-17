@@ -13,7 +13,7 @@ const MakeAdmin = () => {
 	};
 	const makeAdminHandle = (e) => {
 		const makeAdminEmail = { email };
-		fetch("https://salty-bastion-94124.herokuapp.com/users/admin", {
+		fetch("https://shielded-retreat-91589.herokuapp.com/users/admin", {
 			method: "PUT",
 			headers: {
 				authorization: `Bearer ${token}`,

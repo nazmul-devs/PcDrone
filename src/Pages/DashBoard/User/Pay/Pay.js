@@ -13,7 +13,6 @@ const Pay = () => {
 	const { id } = useParams();
 	return (
 		<div>
-			<h2>Payment system coming soon {id}</h2>
 			<Elements stripe={stripePromise}>
 				<CheckoutForm />
 			</Elements>

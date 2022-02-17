@@ -9,7 +9,7 @@ const MyOrders = () => {
 	const { user, cencelHandle, reload } = UseAuth();
 
 	useEffect(() => {
-		const url = `https://salty-bastion-94124.herokuapp.com/myorders?email=${user?.email}`;
+		const url = `https://shielded-retreat-91589.herokuapp.com/myorders?email=${user?.email}`;
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => setMyOrders(data));

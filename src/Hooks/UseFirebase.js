@@ -116,7 +116,7 @@ const UseFirebase = () => {
 	// save user to database
 	const saveUser = (email, displayName, method) => {
 		const user = { email, displayName };
-		const url = "https://salty-bastion-94124.herokuapp.com/users";
+		const url = "https://shielded-retreat-91589.herokuapp.com/users";
 		fetch(url, {
 			method: method,
 			headers: {
@@ -133,14 +133,14 @@ const UseFirebase = () => {
 	// get services
 
 	useEffect(() => {
-		fetch("https://salty-bastion-94124.herokuapp.com/services")
+		fetch("https://shielded-retreat-91589.herokuapp.com/services")
 			.then((res) => res.json())
 			.then((data) => setServices(data));
 	}, [reload]);
 
 	// verify admin
 	useEffect(() => {
-		fetch(`https://salty-bastion-94124.herokuapp.com/users/${user.email}`)
+		fetch(`https://shielded-retreat-91589.herokuapp.com/users/${user.email}`)
 			.then((res) => res.json())
 			.then((data) => {
 				setAdmin(data.admin);
@@ -157,7 +157,7 @@ const UseFirebase = () => {
 		}).then((willDelete) => {
 			if (willDelete) {
 				setReload(false);
-				const url = `https://salty-bastion-94124.herokuapp.com/services`;
+				const url = `https://shielded-retreat-91589.herokuapp.com/services`;
 				fetch(url, {
 					method: "DELETE",
 					headers: {
@@ -189,7 +189,7 @@ const UseFirebase = () => {
 			dangerMode: true,
 		}).then((willDelete) => {
 			if (willDelete) {
-				const url = `https://salty-bastion-94124.herokuapp.com/orders`;
+				const url = `https://shielded-retreat-91589.herokuapp.com/orders`;
 				fetch(url, {
 					method: "DELETE",
 					headers: {

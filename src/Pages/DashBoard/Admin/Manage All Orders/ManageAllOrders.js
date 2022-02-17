@@ -10,7 +10,7 @@ const ManageAllOrders = () => {
 	const [orders, setOrders] = useState([]);
 	const { cencelHandle, reload, setReload } = UseAuth();
 	useEffect(() => {
-		fetch("https://salty-bastion-94124.herokuapp.com/orders")
+		fetch("https://shielded-retreat-91589.herokuapp.com/orders")
 			.then((res) => res.json())
 			.then((data) => setOrders(data));
 	}, [reload]);
@@ -19,7 +19,7 @@ const ManageAllOrders = () => {
 	const updateStatus = (id) => {
 		setReload(true);
 		const status = { status: "Shipped" };
-		const url = `https://salty-bastion-94124.herokuapp.com/orders/${id}`;
+		const url = `https://shielded-retreat-91589.herokuapp.com/orders/${id}`;
 		fetch(url, {
 			method: "PUT",
 			headers: {

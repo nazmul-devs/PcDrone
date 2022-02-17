@@ -13,7 +13,7 @@ const Review = () => {
 		data.name = user.displayName;
 		data.email = user.email;
 		data.rating = value;
-		fetch("https://salty-bastion-94124.herokuapp.com/reviews", {
+		fetch("https://shielded-retreat-91589.herokuapp.com/reviews", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

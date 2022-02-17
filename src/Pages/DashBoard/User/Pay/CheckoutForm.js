@@ -29,8 +29,11 @@ const CheckoutForm = () => {
 		}
 	};
 	return (
-		<div>
-			<form onSubmit={handleSubmit}>
+		<div style={{ paddingTop: "50px" }}>
+			<form
+				onSubmit={handleSubmit}
+				style={{ maxWidth: "500px", margin: "0 auto" }}
+			>
 				<CardElement
 					options={{
 						style: {
@@ -48,7 +51,11 @@ const CheckoutForm = () => {
 					}}
 				/>
 				{error && <p>{error}</p>}
-				<button type="submit" disabled={!stripe}>
+				<button
+					style={{ padding: "10px 50px", margin: "25px 0" }}
+					type="submit"
+					disabled={!stripe}
+				>
 					Pay
 				</button>
 			</form>
