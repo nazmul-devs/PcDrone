@@ -8,7 +8,7 @@ import logo from "../../../img/logo.jpg";
 const Header = () => {
 	const { user, logOut } = UseAuth();
 	return (
-		<Box sx={{ flexGrow: 1 }}>
+		<Box sx={{ flexGrow: 1, pt: 1 }}>
 			<AppBar
 				position="static"
 				sx={{
@@ -50,20 +50,24 @@ const Header = () => {
 						<Button
 							onClick={logOut}
 							sx={{
-								color: "#fff",
+								color: "#000",
 								fontWeight: "bold",
 								background: "#F80051",
+								border: "1px solid #F80051",
+								px: 2,
 							}}
 						>
-							<i className="fas fa-sign-out-alt"></i> Logout
+							<i className="fas fa-sign-out-alt"></i>
+							Logout
 						</Button>
 					) : (
 						<Link to="login">
 							<Button
 								sx={{
-									color: "#fff",
+									color: "#154360",
 									fontWeight: "bold",
 									background: "#F80051",
+									border: "1px solid #F80051",
 									px: 3,
 								}}
 							>

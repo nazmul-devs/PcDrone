@@ -15,8 +15,8 @@ const TopBanner = () => {
 				alignItems: "center",
 				minHeight: "104vh",
 				background: "#D4E6F1",
-				marginTop: -8,
-				pt: 6,
+				marginTop: -9,
+				p: 6,
 			}}
 		>
 			<Grid
@@ -30,7 +30,7 @@ const TopBanner = () => {
 					variant="h3"
 					sx={{
 						fontWeight: "bold",
-						color: "#34495E",
+						color: "#212F3D",
 						textAlign: "justify",
 					}}
 				>

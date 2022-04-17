@@ -13,7 +13,7 @@ const Service = ({ service, index }) => {
 	const { name, img, descripton, price } = service;
 	return (
 		<Grid item xs={12} md={6}>
-			<Card sx={{ maxWidth: 500, minHeight: 630 }}>
+			<Card sx={{ maxWidth: 500 }}>
 				<CardMedia
 					component="img"
 					height="300"

@@ -10,7 +10,6 @@ const stripePromise = loadStripe(
 );
 
 const Pay = () => {
-	const { id } = useParams();
 	return (
 		<div>
 			<Elements stripe={stripePromise}>

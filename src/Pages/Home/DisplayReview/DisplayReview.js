@@ -16,6 +16,8 @@ const DisplayReview = () => {
 		slidesToShow: 3,
 		slidesToScroll: 3,
 	};
+
+	console.log(reviews);
 	return (
 		<Box sx={{ mt: 4, background: "#f2f2f2", pb: 4 }}>
 			<Typography
@@ -31,7 +33,6 @@ const DisplayReview = () => {
 						sx={{
 							minHeight: 300,
 							p: 3,
-							my: 2,
 						}}
 					>
 						<Typography

@@ -25,13 +25,7 @@ const Footer = () => {
 							/>
 						</Link>
 
-						<Typography
-							fontWeight="bold"
-							color="#fff"
-							variant="h6"
-							marginRight="7px"
-							marginTop="10px"
-						>
+						<Typography color="text.secondary" marginTop="10px">
 							114 rue Fontaine 15 road d-block Dhaka
 						</Typography>
 						<Typography color="text.secondary">
